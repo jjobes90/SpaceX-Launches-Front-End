@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/main.css"/>
+    <title>SpaceX Launches Summary</title>
+</head>
+
+<body id="bg-black">
+    <header class="header">
+        <nav>
+            <div class="navbar">
+                <div class="container nav-container">
+                    <input class="checkbox" type="checkbox" onclick="showOrHideDiv()"/>
+                    <div class="hamburger-lines">
+                        <span class="line line1"></span>
+                        <span class="line line2"></span>
+                        <span class="line line3"></span>
+                    </div>
+                    <div class="menu-items">
+                        <li><a href="/index.html">HOME</a></li>
+                        <li><a href="/about.html">ABOUT</a></li>
+                        <li><a href="/projects/SpaceX Website/Index.html">SPACEX LAUNCHES</a></li>
+                        <li><a href="/projects/Weather_app/index.html">WEATHER APP</a></li>
+                        <li><a href="/projects/calorie_tracker/index.html">CALORIE TRACKER</a></li>
+                        <li><a href="/projects/Number Guesser/index.html">NUMBER GUESSER</a></li>
+                        <li><a href="/projects/Github_search/index.html">GITHUB PROFILE FINDER</a></li>
+                        <li><a href="/projects/Chuck_Norris_Joke_Generator/index.html">CHUCK NORRIS JOKES</a></li>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="container header showOrHide">
+            <div class="row">
+                <div class="pre-table mx-auto">
+                    <h1>SpaceX Launch Summary</h1>
+                    <div class="lessons-learned mx-auto">
+                        <h2>Methods Used To Render This Page</h2>
+                        <p> This page fectches 3 different JSON objects from a SpaceX GitHub API: payloads, launches, and rockets. All are updated on a daily basis minumum so the data shown below is as up to date as can be. Information from payloads and rockets are parsed into the launches JSON then each column is adjusted to show the output you see below. All JSON work is completed using raw JavaScript. The UI is sturctured using Bootstrap. </p>
+                    </div>
+                    <div class="iframe-container">
+                        <iframe width="800" height="450" src="https://www.youtube.com/embed/sX1Y2JMK6g8?start=125" title="YouTube video player"
+                            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <h2 id="next-launch">Next Launch:</h2>
+                    <div id="clockdiv">
+                        <div>
+                            <span class="days" id="day"></span>
+                            <div class="smalltext">Days</div>
+                        </div>
+                        <div>
+                            <span class="hours" id="hour"></span>
+                            <div class="smalltext">Hours</div>
+                        </div>
+                        <div>
+                            <span class="minutes" id="minute"></span>
+                            <div class="smalltext">Minutes</div>
+                        </div>
+                        <div>
+                            <span class="seconds" id="second"></span>
+                            <div class="smalltext">Seconds</div>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-dark">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">DATE (PST)</th>
+                                    <th class="text-center">TIME (24-HOUR)</th>
+                                    <th class="text-center">LAUNCH #</th>
+                                    <th class="text-center">LAUNCH NAME</th>
+                                    <th class="text-center">LAUNCH SUCCESS?</th>
+                                    <th class="text-center">ROCKET NAME</th>
+                                    <th class="text-center">PAYLOAD RANK</th>
+                                </tr>
+                            </thead>
+                            <tbody id="output">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+</body>
+    <script src="/assets/js/popper.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <script src="app.js"></script>
+    <script src="/homepage.js"></script>
+</body>
+</html>
